@@ -1,7 +1,7 @@
 
 // Not Found , ERROR PAGES
 
-import { CharacterGrid } from "@/components/characters/charater-grid/CharacterGrid";
+import { CharacterGrid } from "@/components";
 import { getDataCharacterByRace, toUpperCaseUtil } from "@/utils";
 
 // params, serachParams
@@ -18,7 +18,7 @@ export default async function RacesPage( {params}:Props ) {
   const data = await getDataCharacterByRace(race)
 
   return (
-    <div className="">
+    <div >
       <CharacterGrid characters={data}/>
     </div>
   );
