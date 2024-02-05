@@ -1,6 +1,9 @@
 
 // Not Found , ERROR PAGES
 
+import { CharacterGrid } from "@/components/characters/charater-grid/CharacterGrid";
+import { getDataCharacterByRace, toUpperCaseUtil } from "@/utils";
+
 // params, serachParams
 
 interface Props {
@@ -9,13 +12,14 @@ interface Props {
   }
 }
 
-export default function RacesPage( {params}:Props ) {
+export default async function RacesPage( {params}:Props ) {
 
-  console.log(params.race)
+  const race = toUpperCaseUtil(params.race)
+  const data = await getDataCharacterByRace(race)
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 mb-10">
-      <h1>{params.race}</h1>
+    <div className="">
+      <CharacterGrid characters={data}/>
     </div>
   );
 }

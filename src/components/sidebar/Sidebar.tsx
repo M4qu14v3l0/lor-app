@@ -9,20 +9,14 @@ import clsx from "clsx";
 import { SidebarItem } from "./SidebarItem";
 import { SideBarItemStack } from "./SideBarItemStack";
 
+import { racesPages } from "@/utils";
+
 export const Sidebar = () => {
 
   const isSideMenuOpen = useSidebarStore((state) => state.isSideMenuOpen);
   const closeMenu = useSidebarStore((state) => state.closeSideMenu);
 
-  const racesPages = [
-    {href: `/characters/hobbit`, label:'Hobbits'},
-    {href: '/characters/human', label:'Humans'},
-    {href: '/characters/orc', label:'Orcs'},
-    {href: '/characters/elf', label:'Elfs'},
-    {href: '/characters/dwarves', label:'Dwarves'},
-    {href: '/characters/dragon', label:'Dragons'},
-    {href: '/characters/ent', label:'Ent'},
-  ]
+
 
   return (
     <div>
@@ -31,14 +25,14 @@ export const Sidebar = () => {
         <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" />
       )}
 
-      {/* Blur */}
+      {/* Blur effect */}
       {isSideMenuOpen && (
         <div
           onClick={closeMenu}
           className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm"
         />
       )}
-
+      {/* SideBar */}
       <aside className={clsx(
         "fixed w-[320px] h-screen right-0 top-0 bg-[#1e1e1e] shadow-2xl z-20 transform transition-all duration-300",
         {
