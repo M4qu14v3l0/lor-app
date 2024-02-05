@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components";
+import { Navbar, Sidebar } from "@/components";
 
 export default function HomeLayout({
  children
@@ -7,9 +7,9 @@ export default function HomeLayout({
 }) {
   return (
     <main className="min-h-screen">
+        <Navbar />
         <Sidebar />
-
-        <div className="px-0 sm:px-10">
+        <div className="bg-[#333333] text-white px-0 sm:px-10 min-h-screen">
             {children}
         </div>
     </main>

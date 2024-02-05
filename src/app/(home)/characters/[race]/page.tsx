@@ -2,10 +2,20 @@
 // Not Found , ERROR PAGES
 
 // params, serachParams
-export default function RacesPage() {
+
+interface Props {
+  params: {
+    race: string;
+  }
+}
+
+export default function RacesPage( {params}:Props ) {
+
+  console.log(params.race)
+
   return (
-    <div>
-      <h1>Race</h1>
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 mb-10">
+      <h1>{params.race}</h1>
     </div>
   );
 }
