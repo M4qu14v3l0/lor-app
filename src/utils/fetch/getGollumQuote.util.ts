@@ -1,8 +1,8 @@
 
-export const getGollumQuote = async (url: string) => {
+export const getGollumQuote = async (id: string) => {
 
   try{ 
-    const response = await fetch( url, {
+    const response = await fetch( `https://the-one-api.dev/v2/quote/${id}`, {
       cache: 'force-cache',
       method: 'get',
       headers: {
@@ -12,11 +12,10 @@ export const getGollumQuote = async (url: string) => {
     })
     
     const data = await response.json();
-
     return data.docs;
   
   } catch(error) {
-    console.error(`Error getting gollum quote: ${url}`, error );
+    console.error(`Error getting gollum quote: https://the-one-api.dev/v2/quote/${id}`, error );
     throw error;
   }
 }

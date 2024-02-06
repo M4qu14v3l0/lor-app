@@ -4,8 +4,8 @@ import { BackgroundImage } from "@/components";
 
 export default async function SpecialPage() {
   
-  const firstQuote = await getGollumQuote('https://the-one-api.dev/v2/quote/5cd96e05de30eff6ebccec42')
-  const secondQuote = await  getGollumQuote('https://the-one-api.dev/v2/quote/5cd96e05de30eff6ebcce816')
+  const firstQuote = await getGollumQuote('5cd96e05de30eff6ebccec42')
+  const secondQuote = await  getGollumQuote('5cd96e05de30eff6ebcce816')
 
   return (
     <div className="h-[100vh]">

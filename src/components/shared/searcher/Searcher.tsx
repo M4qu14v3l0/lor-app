@@ -22,7 +22,7 @@ export const Searcher = () => {
   }
 
   return (
-    <div className="relative mt-14">
+    <div className="relative mt-[100px]">
       <IoSearchOutline size={20} className="absolute top-2 left-2" />
       <input
         type="text"
