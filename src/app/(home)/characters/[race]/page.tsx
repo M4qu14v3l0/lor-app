@@ -3,6 +3,7 @@ import { PaginationUtil, getDataCharacterByRace, toUpperCaseUtil } from "@/utils
 
 import { Pagination } from "@/components";
 import { BackgroundImageByFilter } from "@/components/shared/background-image/BackgroundImage";
+import { Metadata } from "next";
 
 interface Props {
   params: {
@@ -10,6 +11,11 @@ interface Props {
   };
   searchParams: { [key: string]: string | string[] | undefined }
 }
+
+export const metadata: Metadata = {
+  title: "Characters of the lord of the rings",
+  description: "This application is a test",
+};
 
 export default async function RacesPage( {params , searchParams}:Props ) {
 
