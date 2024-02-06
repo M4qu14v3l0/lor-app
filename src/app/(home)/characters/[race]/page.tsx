@@ -1,13 +1,8 @@
-
-// Not Found , ERROR PAGES
-
 import { CharacterGrid, Searcher } from "@/components";
 import { PaginationUtil, getDataCharacterByRace, toUpperCaseUtil } from "@/utils";
 
 import { Pagination } from "@/components";
-
-
-// params, serachParams
+import { BackgroundImageByFilter } from "@/components/shared/background-image/BackgroundImage";
 
 interface Props {
   params: {
@@ -27,15 +22,14 @@ export default async function RacesPage( {params , searchParams}:Props ) {
   const data = await getDataCharacterByRace( {param:race, name:name});
   // Showing 10 elements
   const dataPerPage = 10
-  // mocked, skipped and limited in the real app
+  // Get elements per page
   const { entries} = PaginationUtil({page:page , data:data, dataPerPage:dataPerPage})
 
   return (
-    <div className="grid pt-20 place-content-center">
-      
+    <BackgroundImageByFilter filter={race} style="grid pt-20 lg:pt-0 place-content-center" >
       <Searcher />
-      <CharacterGrid characters={entries}/>
+        <CharacterGrid characters={entries}/>
       <Pagination totalItems={data.length} itemPerPage={dataPerPage}/>
-    </div>
+    </BackgroundImageByFilter>
   );
 }

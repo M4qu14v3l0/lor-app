@@ -12,13 +12,7 @@ export const Navbar = () => {
   return (
     <nav className="absolute top-0 w-full bg-[#1e1e1e] text-white flex justify-around items-center z-20 h-20">
       <Link href={'/'}>
-        <Image 
-          src={'/logo/logo_lor.webp'}
-          alt={'Loogo Lord of the rings'}
-          height={80}
-          width={80}
-          priority
-        />
+        <h1 className="text-yellow-400 text-2xl font-bold ">Lord of the Rings</h1>
       </Link>
       <button className="p-2 h-10 rounded-md transition-all hover:bg-gray-100 hover:text-black" onClick={openSideMenu}> Menu </button>
     </nav>

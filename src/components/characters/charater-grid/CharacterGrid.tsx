@@ -15,7 +15,7 @@ export const CharacterGrid = ( { characters }: Props) => {
       {
         characters.length == 0
         ?
-        <p>No Encontrado</p>
+        <p className="text-center text-3xl">No Encontrado</p>
         :
         characters.map( character => (
           <CharacterItem  

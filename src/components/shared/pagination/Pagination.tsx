@@ -22,7 +22,7 @@ export const Pagination = ( {totalItems , itemPerPage}:PaginationControlsProps )
   // Todo: refactorizar
 
   return (
-    <div className='fixed justify-center w-full bottom-16  flex items-center gap-2'>
+    <div className='fixed flex justify-center w-full bottom-16 items-center gap-2'>
         {
           Number(page) > 1
           ?
