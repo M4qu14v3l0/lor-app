@@ -6,6 +6,7 @@
 
 ## Crear imagen y ejecutar
 1. Clonar repositorio
-2. Descargar imagen ```docker build -t lor-app .```
-3. Correr contenedor ```docker container run -dp 3000:3000 lor-app```
-4. Entrar al puerto 3000 
+2. Crear una copia del ```.env.template``` y renombrarlo a ```.env``` y cambiar las variables de entorno.
+3. Crear imagen ```docker build -t lor-app .```
+4. Correr contenedor ```docker container run -dp 3000:3000 lor-app```
+5. Entrar al puerto 3000 
