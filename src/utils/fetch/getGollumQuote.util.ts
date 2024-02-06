@@ -12,7 +12,7 @@ export const getGollumQuote = async (id: string) => {
     })
     
     const data = await response.json();
-    return data.docs;
+    return data.docs[0];
   
   } catch(error) {
     console.error(`Error getting gollum quote: https://the-one-api.dev/v2/quote/${id}`, error );

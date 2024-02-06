@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { Character } from "@/interfaces"
@@ -19,12 +19,18 @@ export const CharacterItem = ({ character }:Props ) => {
   const { _id,race,gender,birth,death,name,wikiUrl='/' } = character
 
   const [ isOpen , setIsOpen ] = useState(false)
+  const [ gollumIsFavorite , setGollumIsFavorite ] = useState(false)
   const { addFavorite, favorites } = useFavoriteStore()
 
   const isFavorite = favorites.some(id => id._id === _id)
 
-  const isGollum = favorites.some(id => id._id === '5cd99d4bde30eff6ebccfe9e')
-
+  useEffect(() => {
+    if (name.toLowerCase() === 'gollum') {
+      const gollum = favorites.some((favorite) => favorite._id === _id);
+      setGollumIsFavorite(gollum);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   return (
@@ -54,11 +60,11 @@ export const CharacterItem = ({ character }:Props ) => {
             <FaInfoCircle className="w-6 h-6"/>
           </Link>
           {
-            isGollum 
+            gollumIsFavorite 
             ?
             <Link href={'/special'}>
-            <FaGift className="w-6 h-6"/>
-          </Link>
+              <FaGift className="w-6 h-6"/>
+            </Link>
           :
           ''
           }
