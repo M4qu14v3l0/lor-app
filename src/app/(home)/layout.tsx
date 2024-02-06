@@ -9,7 +9,7 @@ export default function HomeLayout({
     <main className="min-h-screen">
         <Navbar />
         <Sidebar />
-        <div className="bg-[#333333] text-white px-0 sm:px-10 min-h-screen">
+        <div className="bg-[#333333] text-white min-h-screen">
             {children}
         </div>
     </main>

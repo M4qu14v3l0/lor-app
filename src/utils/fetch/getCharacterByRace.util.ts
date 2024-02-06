@@ -2,7 +2,7 @@ export const getDataCharacterByRace = async (param: string) => {
 
   try{
     
-    const response = await fetch(`https://the-one-api.dev/v2/character?race=${param}`, {
+    const response = await fetch(`https://the-one-api.dev/v2/character?race=${param}&page=1`, {
       cache: 'force-cache',
       method: 'get',
       headers: {

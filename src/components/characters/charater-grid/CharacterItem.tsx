@@ -23,7 +23,7 @@ export const CharacterItem = ({ character }:Props ) => {
   const isFavorite = favorites.some(id => id._id === _id)
 
   return (
-  <div className="mx-auto w-[300px] h-fit  bg-[#1e1e1e] rounded-lg shadow-md p-5">
+  <div className="mx-auto w-[300px] h-fit  bg-[#1e1e1e] rounded-lg shadow-md p-5 overflow-hidden">
     
     <h2 className="text-center text-2xl font-semibold mt-3 cursor-pointer hover:scale-x-110 transition-all duration-300" onClick={() => setIsOpen(!isOpen)}>{name}</h2>
     <p className="text-center text-gray-600 mt-1">{race}</p>
