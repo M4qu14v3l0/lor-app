@@ -8,7 +8,6 @@ interface FavoriteStoreState {
 }
 
 export const useFavoriteStore = create<FavoriteStoreState>()(
-  
   persist( 
     (set) => ({
       favorites: [],
