@@ -1,8 +1,9 @@
+import { BentoGrid } from "@/components";
+
 export default function Home() {
   return (
-    <section className="">
-      {/* bento grid */}
-      <h1 className="text-black">Hola</h1>
+    <section className="h-screen flex justify-center items-center">
+      <BentoGrid />
     </section>
   );
 }

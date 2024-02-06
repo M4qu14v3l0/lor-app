@@ -7,8 +7,8 @@ interface Props{
 
 export const ImageOverlay = ({ src, alt }: Props) => {
   return (
-    <div className='absolute w-full h-full -z-10'>
-      <div className='absolute w-full h-full bg-black opacity-20 select-none'>
+    <div className='absolute w-full h-full -z-10 '>
+      <div className='absolute w-full h-full bg-black opacity-20 select-none '>
         <Image src={src} alt={alt} fill style={{ objectFit: 'cover' }} />
       </div>
     </div>
