@@ -10,7 +10,7 @@ export const Navbar = () => {
   const openSideMenu = useSidebarStore((state) => state.openSideMenu);
 
   return (
-    <nav className="bg-[#1e1e1e] text-white flex justify-around items-center h-20">
+    <nav className="absolute top-0 w-full bg-[#1e1e1e] text-white flex justify-around items-center z-20 h-20">
       <Link href={'/'}>
         <Image 
           src={'/logo/logo_lor.webp'}

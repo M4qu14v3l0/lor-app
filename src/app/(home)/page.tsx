@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main className="">
+    <section className="">
       {/* bento grid */}
       <h1 className="text-black">Hola</h1>
-    </main>
+    </section>
   );
 }

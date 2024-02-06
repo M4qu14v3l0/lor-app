@@ -2,6 +2,7 @@
 
 import { CharacterGrid } from "@/components";
 import { useFavoriteStore } from "@/store";
+import { WithOutFavorites } from "./ui/WithOutFavorites";
 
 
 export default function FavoritesPage() {
@@ -10,7 +11,14 @@ export default function FavoritesPage() {
 
   return (
     <div>
-        <CharacterGrid characters={favorites}/>
+        {
+          favorites.length == 0
+          ?
+          <WithOutFavorites />
+          :
+          <CharacterGrid characters={favorites}/>
+        }
+
     </div>
   );
 }

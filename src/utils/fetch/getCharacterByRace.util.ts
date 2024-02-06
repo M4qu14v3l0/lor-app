@@ -1,8 +1,22 @@
-export const getDataCharacterByRace = async (param: string) => {
+interface Props{
+  param: string;
+  name?: string | undefined | string[];
+}
 
-  try{
-    
-    const response = await fetch(`https://the-one-api.dev/v2/character?race=${param}&page=1`, {
+
+export const getDataCharacterByRace = async ({param, name}: Props) => {
+
+  // Todo: Refactorizar
+
+  let url = `https://the-one-api.dev/v2/character?race=${param}&page=1`
+
+  if( name !== undefined ){
+    url = `https://the-one-api.dev/v2/character?race=${param}&name=${name}`
+  }
+
+
+  try{ 
+    const response = await fetch( url, {
       cache: 'force-cache',
       method: 'get',
       headers: {
@@ -10,12 +24,18 @@ export const getDataCharacterByRace = async (param: string) => {
         'Content-Type': 'application/json'
       }
     })
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+    
     const data = await response.json();
+
     return data.docs;
   
   } catch(error) {
-    console.error(`Error getting filtered characters from: https://the-one-api.dev/v2/character?race=${param}`, error );
+    console.error(`Error getting filtered characters from: ${url}`, error );
     throw error;
   }
-
 }
+

@@ -8,7 +8,7 @@ import { Character } from "@/interfaces"
 import { IoHeart, IoPerson } from "react-icons/io5";
 import { MdCake } from "react-icons/md";
 import { GiDeathSkull } from "react-icons/gi";
-import { FaInfoCircle } from "react-icons/fa";
+import { FaInfoCircle, FaGift } from "react-icons/fa";
 import { useFavoriteStore } from "@/store";
 
 interface Props{
@@ -20,10 +20,15 @@ export const CharacterItem = ({ character }:Props ) => {
 
   const [ isOpen , setIsOpen ] = useState(false)
   const { addFavorite, favorites } = useFavoriteStore()
+
   const isFavorite = favorites.some(id => id._id === _id)
 
+  const isGollum = favorites.some(id => id._id === '5cd99d4bde30eff6ebccfe9e')
+
+
+
   return (
-  <div className="mx-auto w-[300px] h-fit  bg-[#1e1e1e] rounded-lg shadow-md p-5 overflow-hidden">
+  <div className="mx-auto w-[280px] sm:w-[300px] h-fit  bg-[#1e1e1e] rounded-lg shadow-md p-5 overflow-hidden">
     
     <h2 className="text-center text-2xl font-semibold mt-3 cursor-pointer hover:scale-x-110 transition-all duration-300" onClick={() => setIsOpen(!isOpen)}>{name}</h2>
     <p className="text-center text-gray-600 mt-1">{race}</p>
@@ -44,10 +49,19 @@ export const CharacterItem = ({ character }:Props ) => {
         <div className="flex justify-center items-center mx-3">
           <GiDeathSkull className="w-6 h-6"/>: <span className="text-sm">{death == '' ? 'No Info' : death}</span>
         </div>
-        <div className="flex justify-center items-center mx-3">
+        <div className="flex justify-center items-center mx-3 gap-5">
           <Link href={wikiUrl}>
             <FaInfoCircle className="w-6 h-6"/>
           </Link>
+          {
+            isGollum 
+            ?
+            <Link href={'/special'}>
+            <FaGift className="w-6 h-6"/>
+          </Link>
+          :
+          ''
+          }
         </div>
       </div>
     </div>

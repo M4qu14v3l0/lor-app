@@ -1,8 +1,6 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState } from 'react';
-
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 
@@ -21,6 +19,7 @@ export const Pagination = ( {totalItems , itemPerPage}:PaginationControlsProps )
 
   const totalPages = Math.ceil( totalItems / itemPerPage)
 
+  // Todo: refactorizar
 
   return (
     <div className='fixed justify-center w-full bottom-16  flex items-center gap-2'>

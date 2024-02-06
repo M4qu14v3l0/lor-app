@@ -1,10 +1,11 @@
 
 // Not Found , ERROR PAGES
 
-import { CharacterGrid } from "@/components";
-import { getDataCharacterByRace, toUpperCaseUtil } from "@/utils";
+import { CharacterGrid, Searcher } from "@/components";
+import { PaginationUtil, getDataCharacterByRace, toUpperCaseUtil } from "@/utils";
 
 import { Pagination } from "@/components";
+
 
 // params, serachParams
 
@@ -17,26 +18,23 @@ interface Props {
 
 export default async function RacesPage( {params , searchParams}:Props ) {
 
+  // Transform race format
   const race = toUpperCaseUtil(params.race);
-  const data = await getDataCharacterByRace(race);
-
+  // Name param exists ?
+  const name = searchParams['name'] 
   // Start pagination in first page
   const page = searchParams['page'] ?? '1'
-  // Showing 6 elements
+  const data = await getDataCharacterByRace( {param:race, name:name});
+  // Showing 10 elements
   const dataPerPage = 10
-
-
   // mocked, skipped and limited in the real app
-  const start = (Number(page) - 1) * dataPerPage // 0, 5, 10 ...
-  const end = start + dataPerPage // 5, 10, 15 ...
-
-  // const totalData = data.length
-  const entries = data.slice(start, end)
+  const { entries} = PaginationUtil({page:page , data:data, dataPerPage:dataPerPage})
 
   return (
-    <div className="grid place-content-center">
-      <CharacterGrid characters={entries}/>
+    <div className="grid pt-20 place-content-center">
       
+      <Searcher />
+      <CharacterGrid characters={entries}/>
       <Pagination totalItems={data.length} itemPerPage={dataPerPage}/>
     </div>
   );
