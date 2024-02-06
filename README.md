@@ -1,5 +1,7 @@
 #Ejecutar el proyecto
 
+
+
 ## Correr en dev
 0. Version Node ^20
 1. Clonar el repositorio.
@@ -13,3 +15,5 @@
 3. Crear imagen ```docker build -t lor-app .```
 4. Correr contenedor ```docker container run -dp 3000:3000 lor-app```
 5. Entrar al puerto 3000 
+
+### Gracias Equipo de ClubHub !! 

@@ -7,7 +7,6 @@ export default async function SpecialPage() {
   const firstQuote = await getGollumQuote('5cd96e05de30eff6ebccec42')
   const secondQuote = await  getGollumQuote('5cd96e05de30eff6ebcce816')
 
-  console.log(firstQuote)
   return (
     <div className="h-[100vh]">
       <BackgroundImage src="/bg/ruin-castle.webp" alt="ruin castle wallpaper" style=" flex justify-center items-center" >
