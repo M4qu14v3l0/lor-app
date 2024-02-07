@@ -10,7 +10,7 @@ import { BentoItem } from "./BentoItem"
 export const BentoGrid = () => {
 
   return (
-    <div className="w-full max-w-[1400px] h-screen lg:h-fit grid lg:grid-cols-10 auto-rows-[35rem] lg:auto-rows-[25rem] gap-4 mx-auto mt-[200px] p-5 lg:p-20">
+    <div className="w-full max-w-[1400px] h-screen lg:h-fit grid lg:grid-cols-10 auto-rows-[35rem] lg:auto-rows-[25rem] gap-4 mx-auto p-5 lg:p-20">
       {
         bentoGridInfo.map((item , index) => (
           <BentoItem key={index} {...item}/>

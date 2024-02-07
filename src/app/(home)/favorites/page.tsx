@@ -10,7 +10,7 @@ export default function FavoritesPage() {
   const { favorites } = useFavoriteStore()
 
   return (
-    <div className="pt-40">
+    <div className="pt-10">
         {
           favorites.length == 0
           ?

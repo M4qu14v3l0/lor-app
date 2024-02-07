@@ -10,7 +10,7 @@ export const Navbar = () => {
   const openSideMenu = useSidebarStore((state) => state.openSideMenu);
 
   return (
-    <nav className="absolute top-0 w-full bg-[#1e1e1e] text-white flex justify-around items-center z-20 h-20">
+    <nav className="w-full bg-[#1e1e1e] text-white flex justify-around items-center z-20 h-20">
       <Link href={'/'}>
         <h1 className="text-yellow-400 text-2xl font-bold ">Lord of the Rings</h1>
       </Link>

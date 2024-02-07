@@ -10,7 +10,7 @@ export default async function SpecialPage() {
   return (
     <div className="h-[100vh]">
       <BackgroundImage src="/bg/ruin-castle.webp" alt="ruin castle wallpaper" style=" flex justify-center items-center" >
-        <p className="z-10 absolute top-[20%] left-[0%] mx-5  sm:top-[40%] sm:left-[50%] bg-[#1e1e1e] p-5 text-xl rounded-xl">{firstQuote.dialog}</p>
+        <p className="z-10 absolute top-[10%] left-[0%] mx-5  sm:top-[40%] sm:left-[50%] bg-[#1e1e1e] p-5 text-xl rounded-xl">{firstQuote.dialog}</p>
         <p className="z-10 absolute top-[65%] right-[0%] mx-5   sm:top-[60%] sm:right-[30%] bg-[#1e1e1e] p-5 text-xl rounded-xl">{secondQuote.dialog}</p>
         <Gollum />
       </BackgroundImage>

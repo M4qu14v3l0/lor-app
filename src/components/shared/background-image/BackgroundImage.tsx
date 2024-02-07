@@ -48,7 +48,7 @@ export const BackgroundImage = ({ children, src, alt, height = 'h-screen', style
   )
 }
 
-export const BackgroundImageByFilter = ({ children, filter, height = 'h-screen', style }:BackgroundImageByFilterProps) => {
+export const BackgroundImageByFilter = ({ children, filter, height = 'h-full md:h-screen', style }:BackgroundImageByFilterProps) => {
   const { src, alt } = selectBackground(filter)
   return (
 

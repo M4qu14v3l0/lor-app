@@ -32,7 +32,7 @@ export default async function RacesPage( {params , searchParams}:Props ) {
   const { entries} = PaginationUtil({page:page , data:data, dataPerPage:dataPerPage})
 
   return (
-    <BackgroundImageByFilter filter={race} style="grid mt-[80px] lg:pt-0 place-content-center" >
+    <BackgroundImageByFilter filter={race} style="grid place-content-center" >
       <Searcher />
         <CharacterGrid characters={entries}/>
       <Pagination totalItems={data.length} itemPerPage={dataPerPage}/>

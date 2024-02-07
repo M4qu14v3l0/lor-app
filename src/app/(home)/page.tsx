@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <section className="h-screen flex justify-center items-center">
+    <section className="h-full flex justify-center items-center">
       <BentoGrid />
     </section>
   );
